@@ -4,10 +4,10 @@ import { getOutput } from "../utils/GetOutput";
 import { output } from "framer-motion/client";
 
 
-const CodeOutput = ({ output:any, status:any }) => {
+const CodeOutput = ({ output, status }:{ output:any, status:any }) => {
 
     
-    const statusColor = {
+   const statusColor = {
         Running: "blue.500",
         Completed: "green.500",
         Success: "green.500",
