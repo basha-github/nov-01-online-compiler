@@ -1,10 +1,9 @@
 
 import { Box, Text, Badge, Flex } from "@chakra-ui/react";
 import { getOutput } from "../utils/GetOutput";
-import { output } from "framer-motion/client";
 
 
-const CodeOutput = ({ output, status }:{ output:any, status:any }) => {
+const CodeOutput = ({ output, status }:{ output:any, status:string }) => {
 
     
    const statusColor = {
