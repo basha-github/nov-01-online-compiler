@@ -21,21 +21,16 @@ import Select from "react-select";
 import '../css/Navbar.css';
 import { LANGUAGES } from '../constants/languages';
 
-const Navbar = ({ userLang, setUserLang, userTheme, setUserTheme, fontSize, setFontSize }) => {
-    const languages = [
-        { value: "c", label: "C" },
-        { value: "cpp", label: "C++" },
-        { value: "python", label: "Python" },
-        { value: "java", label: "Java" },
-        { value: "javascript", label: "Javascript" }
-    ];
+const Navbar = ({ userLang, setUserLang, userTheme, setUserTheme, fontSize, setFontSize }:
+    { userLang:any, setUserLang:any, userTheme:any, setUserTheme:any, fontSize:any, setFontSize:any }) => {
+    
 
     const themes = [
         { value: "vs-dark", label: "Dark" },
         { value: "light", label: "Light" },
     ];
 
-    function handleThemeChange(th) {
+    function handleThemeChange(th:any) {
         const theme = th;
         if (["light", "vs-dark"].includes(theme.value)) {
             setUserTheme(theme.value);
