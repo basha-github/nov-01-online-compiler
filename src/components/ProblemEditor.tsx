@@ -57,6 +57,7 @@ function ProblemEditor({ children }: ProblemEditorProps) {
         { input: "13", expectedOutput: "true" },
         { input: "40", expectedOutput: "false" }
     ]);
+    
     const [selectedTestCase, setSelectedTestCase] = useState(0);
     const [userOutput, setUserOutput] = useState("");
     const [loading, setLoading] = useState(false);
@@ -76,6 +77,7 @@ const [solLang,setSolLang] = useState('');
         .then(
             (res)=>{
                 console.log(res.data);
+                console.log(userCode);
                 setQuestion(res.data);
                 setTestCases(res.data.allTestCases);
                 setSolLang(res.data.javascript_sol);
@@ -115,9 +117,15 @@ const [solLang,setSolLang] = useState('');
         }
     };
 
-    const updateTestCase = (field:string, value:string) => {
+    const updateTestCase = (field:string, value:any) => {
         const newTestCases = [...testCases];
-        newTestCases[selectedTestCase][field] = value;
+
+        //newTestCases[selectedTestCase][field] = value;
+         newTestCases[selectedTestCase] = { 
+        ...newTestCases[selectedTestCase], // Ensure immutability for the inner object too
+        [field]: value 
+        }
+        
         setTestCases(newTestCases);
     };
 
@@ -133,7 +141,7 @@ const [solLang,setSolLang] = useState('');
         try {
             const { data } = await submitCode(formData);
             const { token } = data;
-            const { data: output, success, err } = await checkStatus(token);
+            const { data: output, success, err } = await checkStatus(token) as any;
 
             if (success) {
                 setUserOutput(output);
