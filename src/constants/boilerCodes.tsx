@@ -70,7 +70,7 @@ const erLangBoiler = `-module(hello).
 -export([hello_world/0]).
 
 hello_world() -> io:fwrite("Hello, World!\n").`;
-const fSharpBoiler = `printfn "Hello, World!"`;
+//const fSharpBoiler = `printfn "Hello, World!"`;
 const fortranBoiler = `program hello
 write(*,*) "Hello, World!"
 end program hello`;
@@ -82,7 +82,7 @@ func main() {
     fmt.Println("Hello, World!")
 }`;
 
-const groovyBoiler = `println "Hello, World!"`;
+//const groovyBoiler = `println "Hello, World!"`;
 const haskellBoiler = `main = putStrLn "Hello, World!"`;
 const javaBoiler = `public class HelloWorld {
 	public static void main(String[] args) {
@@ -142,7 +142,7 @@ Sub Main()
 End Sub
 End Module`;
 
-export const boilerCodes = (languageId) => {
+export const boilerCodes = (languageId:any) => {
 	switch (languageId) {
 		case 45:
 			return assemblyBoiler;

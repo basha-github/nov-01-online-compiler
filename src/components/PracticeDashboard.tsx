@@ -16,7 +16,7 @@ import {
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import type { Props } from "react-select";
+//import type { Props } from "react-select";
 
 interface Question {
   id:string,
@@ -33,7 +33,10 @@ const stats = [
   { label: "Contest Wins", value: 12 },
 ];
 
-const PracticeDashboard: React.FC = (props: Props) => {
+type PracticeDashboardProps = {
+  children?: React.ReactNode; // children can be optional
+};
+const PracticeDashboard = ({children}: PracticeDashboardProps) => {
   const { id } = useParams();
   const [questions, setQuestions] = useState<Question[]>([]);
   useEffect(() => {
@@ -41,7 +44,7 @@ const PracticeDashboard: React.FC = (props: Props) => {
 
     const url =
       "http://localhost:8080/online/compiler/questions/get/bycategory";
-    console.log("props.." + props);
+    console.log("props.." + children);
 
     axios.get(url, { params: { category: val } }).then((res) => {
       console.log("kadiri...."+res.data);

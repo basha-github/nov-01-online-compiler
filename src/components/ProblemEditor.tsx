@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Flex, Spinner, Textarea, Heading, VStack, HStack, Text, IconButton, Tooltip, Container, Spacer,ButtonGroup } from '@chakra-ui/react';
+import { Box, Button, Flex, Spinner, Textarea, Heading, VStack, HStack, Text, IconButton,  Container, Spacer,ButtonGroup } from '@chakra-ui/react';
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
 import Editor from "@monaco-editor/react";
 
@@ -22,7 +22,7 @@ type ProblemEditorProps = {
 function ProblemEditor({ children }: ProblemEditorProps) {
     const {id} = useParams();
 
-    const [userName, setUserName] = useState(() => {
+    const [] = useState(() => {
         console.log(children);
     const savedName = localStorage.getItem('userName');
     return savedName ? savedName : '';
@@ -145,7 +145,7 @@ const [solLang,setSolLang] = useState('');
                 setLoading(false);
             }
         }
-        catch (err) {
+        catch (err:any) {
             let error = err.response ? err.response.data : err;
             console.log(error);
             setLoading(false);

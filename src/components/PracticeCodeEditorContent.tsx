@@ -1,6 +1,5 @@
 import { Icon } from "@chakra-ui/react";
 import { FaHome} from "react-icons/fa";
-import ProblemEditor from "./ProblemEditor";
 import { Link } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";

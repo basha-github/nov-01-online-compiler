@@ -1,6 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
 import SideBar from './SideBar';
-import PracticeDashboard from './PracticeDashboard';
 import PracticeGridNames from './PracticeGridNames';
 
 

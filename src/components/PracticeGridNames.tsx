@@ -2,13 +2,11 @@ import React from 'react';
 import '../mycss/textcss.css'
 import {
   Box,
-  Flex,
   SimpleGrid,
   Stat,
   StatLabel,
   StatNumber
 } from '@chakra-ui/react';
-import { CheckCircleIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 
 // Mock data
